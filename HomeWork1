@@ -1,0 +1,27 @@
+#kullanıcı ne değer girerse girsin type yazdırdığında hepsi str çıkmaktadır. Float, str, int görmek için aşağıda girilen değerleri kendime göre diğer veri tiplerine dönüştürdüm.
+#Böylece farklı çıktılar elde etmiş oldum.
+
+x = int(input("enter the value:"))
+y = int(input("enter the value:"))
+z = str(input("enter the value:"))
+a = float(input("enter the value:"))
+b = str(input("enter the value:"))
+
+print("value is:",x)
+print(f'value is: {y}')
+print(f'value is: {z}')
+print("value is: {}".format(a))
+print("value is: {}".format(b))
+
+print(type(x))
+print(type(y))
+print(type(z))
+print(type(a))
+print(type(b))
+
+
+
+
+
+
+
