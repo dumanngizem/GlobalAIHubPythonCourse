@@ -1,6 +1,5 @@
 #kullanıcı ne değer girerse girsin type yazdırdığında hepsi str çıkmaktadır. Float, str, int görmek için aşağıda girilen değerleri kendime göre diğer veri tiplerine dönüştürdüm.
 #Böylece farklı çıktılar elde etmiş oldum.
-#Bu değerleri listeye aktarıp type çıktısı da yapılabilirdi.
 
 x = int(input("enter the value:"))
 y = int(input("enter the value:"))
