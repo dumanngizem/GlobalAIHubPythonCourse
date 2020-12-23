@@ -1,0 +1,28 @@
+list = []
+
+firstname = input("Enter the your first name: ")
+list.append(firstname)
+lastname = input("Enter the your last name: ")
+list.append(lastname)
+age = int(input("Enter the your age: "))
+list.append(age)
+birthday = int(input("Enter the your date of birth(just year):"))
+list.append(birthday)
+
+print("Your informations are: ")
+for i in list:
+    print(" ",i)
+
+
+if age < 18:
+
+    print("You can't go out because it's too dangerous!")
+
+else:
+
+    print("You can go out to street.")
+
+
+
+
+
