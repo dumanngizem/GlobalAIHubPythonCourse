@@ -1,0 +1,57 @@
+import random as rnd
+
+name = input("The User name: ")
+print("WELCOME " + name,"!")
+
+print("Starting Hangman Game...GOOD LUCK!!")
+
+#istediğimiz kadar buraya kelime ekleyebiliriz.
+words = ["televizyon", "bilgisayar", "kitap", "sehpa", "yasin", "inanç", "kazanç", "dünya", "kelime", "cımbız"]
+word = rnd.choice(words)
+max_error = 10
+
+guesses = [ ]
+check = False
+
+while not check:
+
+    for char in word:
+
+        if char.lower() in guesses:
+
+            print(char, end=" ")
+
+        else:
+
+            print("_", end=" ")
+
+    print(" ")
+
+    print(f"Remaining Error:{max_error}")
+    guess = input("Enter Next Guess: ")
+    guesses.append(guess.lower())
+
+    if guess.lower() not in word.lower():
+
+        max_error -= 1
+
+        if max_error == 0:
+
+            break
+
+    check = True
+
+    for char in word:
+
+        if char.lower() not in guesses:
+
+            check = False
+
+if check:
+
+    print(f"\nYou winner. Word is {word.upper()}!")
+
+else:
+
+    print("\nYou died. GAME OVER...")
+    print(f"Word is {word.upper()}!!")
