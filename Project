@@ -1,0 +1,110 @@
+def gizo():
+        return ("\n\tYou Failed in Class")
+
+
+finish = False
+names = 'Gizem'
+surnames = 'Duman'
+
+turn = 3
+for x in range(3):
+
+    name = input("Please Enter Your Name: ")
+    surname = input("Please Enter Your Surname: ")
+
+    if names == name and surnames == surname:
+
+        print("\nLogin Successfully.")
+        print("WELCOME " +name.upper(),"" +surname.upper(),"!")
+        break
+
+    elif names != name and surnames == surname:
+
+        print("\nYou entered the wrong name.")
+        turn -= 1
+
+    elif names == name and surnames != surname:
+
+        print("\nYou entered the wrong surname.")
+        turn -= 1
+
+    else:
+
+        print("\nYou entered the wrong surname and name.")
+        turn -=1
+
+
+if turn == 0:
+    print("\n\tPlease Try Again Later.")
+
+
+courses_list = [ ]
+
+lesson1 = input("Please Enter The Course: ")
+courses_list.append(lesson1)
+
+lesson2 = input("Please Enter The Course: ")
+courses_list.append(lesson2)
+
+lesson3 = input("Please Enter The Course: ")
+courses_list.append(lesson3)
+
+lesson4 = input("Please Enter The Course: ")
+courses_list.append(lesson4)
+
+lesson5 = input("Please Enter The Course: ")
+courses_list.append(lesson5)
+
+
+print("Available Courses: ", courses_list)
+
+student = []
+x = int(input("\nHow many courses do you want to take? "))
+
+for i in range(x):
+
+    want = input("Enter the course you want to take: ")
+    if want in courses_list:
+        student.append(want)
+
+    else:
+        print("There is no such course.")
+
+if x < 3:
+    print(gizo())
+    finish = True
+if finish:
+    import sys
+    sys.exit()
+
+print("\nCourses Taken: ", student)
+
+exam = input("\nWhich course do you want to take the exam?\n")
+
+if exam in student:
+
+    Exams = {}
+    midterm = float(input("\nEnter the midterm exam result: "))
+    final = float(input("Enter the final exam result: "))
+    project = float(input("Enter the project result: "))
+    Exams = {"midterm":midterm, "final":final, "project":project }
+    print("Exams:", Exams)
+
+    grade_midterm = ((midterm * 30) / 100)
+    grade_final = ((final * 50) / 100)
+    grade_project = ((project * 20) / 100)
+    grade = ((midterm + final + project) / 3)
+
+    if grade > 90:
+        print("AA")
+    elif 70 < grade < 90:
+        print("BB")
+    elif 50 < grade < 70:
+        print("CC")
+    elif 30 < grade < 50:
+        print("DD")
+    else:
+        print("FF")
+
+else:
+    print("You are not taking the course of the exam you have chosen!!!")
